@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div id="wrapper">
+        <h1 class="page-header">
+            View - {{ output.id }}
+        </h1>
+
+        <a href=".." class="btn btn-small btn-primary"> View all</a>&nbsp;
+        <a href="../edit/{{ output.id }}" class="btn btn-small btn-success">Edit</a>
+
+        <br/><br/>
+
+        <table class="table">
+            <tr>
+                <td>ID</td>
+                <td>Created AT</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Categories</td>
+            </tr>
+            <tr>
+                <td>{{ output.id }}</td>
+                <td>{{ output.createdAt }}</td>
+                <td>{{ output.name }}</td>
+                <td><a href="mailto:{{ output.email }}">{{ output.email }}</a></td>
+                <td>
+                    {% for cat in output.categories %}
+                        <div class="cat-style">
+                            {{ cat }}
+                        </div>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+
+{% endblock %}

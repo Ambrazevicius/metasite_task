@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div id="wrapper">
+        <h1 class="page-header">
+            List of subscribers
+        </h1>
+
+        <ul>
+            {% for item in json %}
+                <li>{{ item.id|e }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div id="wrapper">
+        <h1 class="page-header">Edit - {{ id }}</h1>
+
+        <a href=".." class="btn btn-small btn-primary"> View all</a>&nbsp;
+        <a href="../view/{{ id }}" class="btn btn-small btn-success">view</a>
+
+        <br/><br/>
+        <br/><br/>
+
+        {% if errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {%  endif %}
+
+        {% if success %}
+            <div class="alert alert-success">
+                {{ success }}
+            </div>
+        {%  endif %}
+
+        {{ form_start(form) }}
+
+
+        <div class="form-group col-md-6 ">
+            {{ form_widget(form.name) }}
+            {{ form_errors(form.name, {'attr': {'class': 'error'}}) }}
+        </div>
+        <div class=" form-group col-md-6 {{ form.email.vars.errors|length > 0 ? 'has-error' }}">
+            {{ form_widget(form.email) }}
+            {{ form_errors(form.email, {'attr': {'class': 'error'}}) }}
+        </div>
+        <div class="form-group col-md-12 {{ form.categories.vars.errors|length > 0 ? 'has-error' }}">
+            {{ form_widget(form.categories) }}
+            {{ form_errors(form.categories, {'attr': {'class': 'error'}}) }}
+            <small  class="form-text text-muted">Choose category(-ies) you would like to subscribe.</small>
+        </div>
+
+        <div class=" form-groupcol-md-12">
+            {{ form_widget(form.save) }}
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
+
+
+
+{% endblock %}

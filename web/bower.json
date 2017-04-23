@@ -1,0 +1,22 @@
+{
+    "name": "subscribe-me-pls",
+    "version": "1.0.0",
+    "homepage": "",
+    "description": "",
+    "moduleType": [
+        "node"
+    ],
+    "authors": [
+        "Deividas Ambrazevicius"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap-sass": "latest"
+    }
+}
