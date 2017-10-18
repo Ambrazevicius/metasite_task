@@ -45,4 +45,3 @@ Enjoy!
 
 
 Deividas Ambrazevicius
-info@supportofda.com
